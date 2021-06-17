@@ -43,7 +43,7 @@ public class GraphAL {
                 }
             }
         }
-        sb.deleteCharAt(sb.length()-1);
+        sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 
@@ -71,7 +71,7 @@ public class GraphAL {
 
             }
         }
-        sb.deleteCharAt(sb.length()-1);
+        sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 
