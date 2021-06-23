@@ -41,11 +41,11 @@ public class SpiralMatrix {
                 list.add(matrix[i][right]);
             }
             right--;
-            for (int i = right; i >= left; i--) {
+            for (int i = right; i >= left && list.size() < size; i--) {
                 list.add(matrix[bottom][i]);
             }
             bottom--;
-            for (int i = bottom; i >= top; i--) {
+            for (int i = bottom; i >= top && list.size() < size; i--) {
                 list.add(matrix[i][left]);
             }
             left++;
