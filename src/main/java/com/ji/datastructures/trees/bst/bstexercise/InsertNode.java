@@ -1,4 +1,4 @@
-package com.ji.datastructures.binarytree.bstexercise;
+package com.ji.datastructures.trees.bst.bstexercise;
 /*
 
 1) You are given a pointer to the root of a binary search tree and values to be inserted into the tree.
@@ -18,7 +18,6 @@ Insert the values into their appropriate position in the binary search tree and 
 */
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class InsertNode {
 

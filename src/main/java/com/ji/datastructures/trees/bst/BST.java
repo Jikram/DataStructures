@@ -1,4 +1,4 @@
-package com.ji.datastructures.binarytree;
+package com.ji.datastructures.trees.bst;
 
 public class BST {
 
