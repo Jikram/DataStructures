@@ -1,4 +1,4 @@
-package com.ji.datastructures.binarytree;
+package com.ji.datastructures.trees.bst;
  /*  BST1
             5
          /    \
@@ -21,6 +21,8 @@ Preorder Serialize:[8,3,1,null,null,6,4,null,null,7,null,null,10,null,14,13,null
 
 */
 
+
+import com.ji.datastructures.trees.bst.bstexercise.ValidateBST;
 
 public class DriverBST {
     public static void main(String[] args) {
@@ -56,6 +58,7 @@ public class DriverBST {
         System.out.println("Size of the bst2 : " + bst2.sizeOfBst(bst2.root));
         System.out.println("Min of bst2 : " + bst2.minOfBst(bst2.root));
         System.out.println("Max of bst2 : " + bst2.maxOfBST(bst2.root));
+
 
 
     }
