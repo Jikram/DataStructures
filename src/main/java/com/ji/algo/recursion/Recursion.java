@@ -5,7 +5,7 @@ public class Recursion {
         System.out.println("Adding all numbers up to n :" + addNNumbers(5));
         System.out.println("Factorial of a given number :" + factorial(5));
         System.out.println("FactorialOptimized of a given number :" + factorialOptimized(1000, 1));
-        System.out.println("Fibinocci of a given number :" + fibinocci(10));
+        System.out.println("Fibinocci of a given number :" + fibinocci(9));
         System.out.println("FibinocciOptimized of a given number :" + fibinocciOptimized(10, 0, 1));
         System.out.println("HeadRecursion number : ");
         headAddNNumber(5);

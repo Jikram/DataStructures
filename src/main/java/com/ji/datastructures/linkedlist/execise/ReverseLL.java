@@ -29,6 +29,15 @@ public class ReverseLL {
         head3.next.next.next = new ListNode(4);
         head3.next.next.next.next = new ListNode(5);
 
+        ListNode head4 = new ListNode(1);
+        head4.next = new ListNode(2);
+        head4.next.next = new ListNode(3);
+        head4.next.next.next = new ListNode(4);
+        head4.next.next.next.next = new ListNode(5);
+
+        ListNode head5 = new ListNode(3);
+        head5.next = new ListNode(5);
+
         System.out.println("Original ll is below : ");
         displayLL(head1);
         System.out.println("Reverse ll Iteratively is below : ");
@@ -43,6 +52,13 @@ public class ReverseLL {
         displayLL(head3);
         System.out.println("Reverse ll Using Stack Implementation is below : ");
         displayLL(reverseWithStack(head3));
+
+        System.out.println("Original ll is below : ");
+        displayLL(head4);
+        System.out.println("Reverse between ll Iteratively is below : ");
+        displayLL(reverseBetween(head4, 2, 4));
+        //displayLL(reverseBetween(head5, 1, 1));
+        displayLL(reverseBetween(head5, 1, 2));
 
     }
 
@@ -97,9 +113,35 @@ public class ReverseLL {
         return headRev;
     }
 
+    // LC 92 [1,2,3,4,5] to [1,4,3,2,5]//
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        if (right - left == 0 || head == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(-1);
+        ListNode prev, curr;
+        curr = head;
+        prev = dummy;
+        dummy.next = head;
+        for (int i = 1; i < left; i++) {
+            prev = curr;
+            curr = curr.next;
+        }
+        ListNode pHead = prev, tail = curr, next = curr.next;
+        for (int i = left; i < right; i++) {
+            prev = curr;
+            curr = next;
+            next = curr.next;
+            curr.next = prev;
+        }
+        pHead.next = curr;
+        tail.next = next;
+        return dummy.next;
+    }
+
     public static void displayLL(ListNode current) {
         if (current == null) {
-            System.out.println("empty linkedlist ");
+            System.out.println("empty linked list ");
         }
         while (current != null) {
             System.out.print(current.value);
