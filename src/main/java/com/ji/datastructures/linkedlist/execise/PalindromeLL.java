@@ -16,6 +16,14 @@ public class PalindromeLL {
         head2.next.next.next = new LLNode(1);
         displayLL(head2);
         System.out.println("head2 palindrome check : " + isLLPalindrome(head2));
+
+        LLNode head3 = new LLNode(1);
+        head3.next = new LLNode(2);
+        head3.next.next = new LLNode(3);
+        head3.next.next.next = new LLNode(4);  // node with data value 2
+        head3.next.next.next.next = head3.next;
+        System.out.println("head3 cycleCheck check : " + isCycle(head3));
+        System.out.println("head3 detectCycle check : " + detectCycle(head3).value);
     }
 
     public static class LLNode {
@@ -63,6 +71,43 @@ public class PalindromeLL {
             curr = temp;       // curr = 3
         }
         return prev;
+    }
+
+    public static boolean isCycle(LLNode head) {
+        if (head == null) {
+            return false;
+        }
+        LLNode slow = head;
+        LLNode fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static LLNode detectCycle(LLNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        LLNode fast = head;
+        LLNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (slow == fast) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+        return null;
     }
 
 
