@@ -1,11 +1,17 @@
 package com.ji.general.lc.wordproblems;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class ReverseWord {
     public static void main(String[] args) {
         System.out.println("Output : " + reverseWord("hello"));
         System.out.println("Output 151 : " + reverseWords151("the sky is blue"));
         System.out.println("Output 151 : " + reverseWords151("a good   example"));
         System.out.println("Output 151 :" + reverseWords151("  hello world  "));
+        System.out.println("Output 345 :" + reverseVowels("leetcode"));
+        System.out.println("Output 345 :" + reverseVowelsOtherTechnique("leetcode"));
     }
 
     // 344. Reverse String //
@@ -42,5 +48,52 @@ public class ReverseWord {
         sb.deleteCharAt(sb.length() - 1);
         return new String(sb);
     }
+
+    // LC 345 //
+    public static String reverseVowels(String s) {
+        Set<Character> set = new HashSet<Character>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+        char[] arr = s.toCharArray();
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            while (i < j && !set.contains(arr[i])) {
+                i++;
+            }
+            while (i < j && !set.contains(arr[j])) {
+                j--;
+            }
+            char temp;
+            temp = arr[i];
+            arr[i++] = arr[j];
+            arr[j--] = temp;
+
+        }
+        return new String(arr);
+    }
+
+    public static String reverseVowelsOtherTechnique(String s) {
+        // s = "leetcode" output : "leotcede" //
+        Set<Character> set = new HashSet<Character>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+        char[] arr = s.toCharArray();
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            if (set.contains(arr[i]) && set.contains(arr[j])) {
+                char temp;
+                temp = arr[i];
+                arr[i++] = arr[j];
+                arr[j--] = temp;
+            } else if (set.contains(arr[i]) && !set.contains(arr[j])) {
+                j--;
+            } else if (!set.contains(arr[i]) && set.contains(arr[j])) {
+                i++;
+            } else {
+                i++;
+                j--;
+            }
+        }
+        return String.valueOf(arr);
+    }
+
 }
 

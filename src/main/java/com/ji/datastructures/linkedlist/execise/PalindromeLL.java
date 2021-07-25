@@ -110,6 +110,12 @@ public class PalindromeLL {
         return null;
     }
 
+    public static LLNode insertNodePos(LLNode head, int pos){
+
+        return null;
+
+    }
+
 
     public static void displayLL(LLNode current) {
         if (current == null) {
