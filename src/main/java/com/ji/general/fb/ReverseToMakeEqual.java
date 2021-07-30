@@ -7,6 +7,7 @@ import java.util.Map;
 /*
 A = [1, 2, 3, 4]
 B = [1, 4, 3, 2]
+Leetcode#1460 . it is also given that both target and arr can be between 1 to 1000
 */
 public class ReverseToMakeEqual {
     public static void main(String[] args) {

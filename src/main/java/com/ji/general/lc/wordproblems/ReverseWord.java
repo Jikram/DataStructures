@@ -12,6 +12,10 @@ public class ReverseWord {
         System.out.println("Output 151 :" + reverseWords151("  hello world  "));
         System.out.println("Output 345 :" + reverseVowels("leetcode"));
         System.out.println("Output 345 :" + reverseVowelsOtherTechnique("leetcode"));
+        System.out.println("Output 1844 :" + replaceDigits("a1c1e1"));
+        System.out.println("Output 1844 :" + replaceDigits("a1c1e1"));
+        System.out.println( (char)('a'+ ('1' - '0')));
+        System.out.println( (char)('a'+ ('c')));
     }
 
     // 344. Reverse String //
@@ -95,5 +99,18 @@ public class ReverseWord {
         return String.valueOf(arr);
     }
 
+    //Leetcode#1844  Replace All Digits with Characters
+    //s = "a1c1e1" Output: "abcdef"
+    public static String replaceDigits(String s) {
+        String output = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 != 0) {
+                output += (char)(s.charAt(i - 1) + (s.charAt(i) - '0'));
+            } else {
+                output += s.charAt(i);
+            }
+        }
+        return output;
+    }
 }
 
