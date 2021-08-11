@@ -1,15 +1,14 @@
 package com.ji.general.lc.wordproblems;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ReverseWord {
     public static void main(String[] args) {
-        System.out.println("Output : " + reverseWord("hello"));
+        System.out.println("Output 344 : " + reverseWord("hello"));
         System.out.println("Output 151 : " + reverseWords151("the sky is blue"));
         System.out.println("Output 151 : " + reverseWords151("a good   example"));
         System.out.println("Output 151 :" + reverseWords151("  hello world  "));
+        System.out.println("Output 151 other approach :" + reverseWords151OtherApproach("hello world"));
         System.out.println("Output 345 :" + reverseVowels("leetcode"));
         System.out.println("Output 345 :" + reverseVowelsOtherTechnique("leetcode"));
         System.out.println("Output 1844 :" + replaceDigits("a1c1e1"));
@@ -42,7 +41,6 @@ public class ReverseWord {
     // 151. Reverse Words in a String //
     public static String reverseWords151(String s) {
         StringBuilder sb = new StringBuilder();
-
         String s1 = s.replaceAll("\\s+", " ");
         String[] arr = s1.split(" ");
         for (int i = arr.length - 1; i >= 0; i--) {
@@ -51,6 +49,12 @@ public class ReverseWord {
         }
         sb.deleteCharAt(sb.length() - 1);
         return new String(sb);
+    }
+    public static String reverseWords151OtherApproach(String s) {
+        List<String> list = Arrays.asList(s.split(" "));
+        Collections.reverse(list);
+        String join = String.join(" ", list);
+        return join;
     }
 
     // LC 345 //
