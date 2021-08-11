@@ -15,6 +15,8 @@ public class Recursion {
         System.out.println("Linear search recursively : " + linearSearchRecursively(arr, 5, 0));
         int[] arr1 = new int[]{4, 6, 7, 8, 9, 10, 15, 20, 22};
         System.out.println("Binary  search recursively : " + binarySearchRecursively(arr1, 15, 0, arr1.length - 1));
+        System.out.println("Print digit in strings form recursively below : ");
+        printNumberToString(654);
 
     }
 
@@ -83,5 +85,18 @@ public class Recursion {
         }
     }
 
+    // 654 to six five four //
+    public static void printNumberToString(int n) {
+        String[] noStrings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        helperPrintNumber(654, noStrings);
 
+    }
+
+    private static void helperPrintNumber(int n, String[] s) {
+        if (n == 0) {
+            return;
+        }
+        helperPrintNumber(n / 10, s);
+        System.out.println(s[n % 10]);
+    }
 }
