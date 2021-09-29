@@ -3,7 +3,21 @@ package com.ji.general.fb;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+/*
+You are given a tree that contains N nodes, each containing an integer u which corresponds to a lowercase character c in the string s using 1-based indexing.
+You are required to answer Q queries of type [u, c], where u is an integer and c is a lowercase letter. The query result is the number of nodes in the subtree of node u containing c.
+        1(a)
+        /   \
+      2(b)  3(a)
+s = "aba"
+RootNode = 1
+query = [[1, 'a']]
+Note: Node 1 corresponds to first letter 'a', Node 2 corresponds to second letter of the string 'b', Node 3 corresponds to third letter of the string 'a'.
+output = [2]
+Both Node 1 and Node 3 contain 'a', so the number of nodes within the subtree of Node 1 containing 'a' is 2.
+ */
 
+// leetcode#1519 is also same and will be attempted later.
 public class TreesSecond {
     public static void main(String[] args) {
         // First Node
